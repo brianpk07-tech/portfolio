@@ -27,7 +27,7 @@
 
 /* Mobile Typography & Button */
 .hero-content {
-  text-align: left; /* Mobile: Centered text */
+  text-align: center; /* Mobile: Centered text */
 }
 
 .hero-content h1 {
@@ -76,7 +76,7 @@
   }
 
   .hero-content {
-    text-align: left; /* PC: Align text to the left next to the image */
+    text-align: center; /* PC: Align text to the left next to the image */
   }
 
   .hero-content h1 {
