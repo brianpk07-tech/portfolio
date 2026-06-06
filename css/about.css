@@ -1,0 +1,134 @@
+/* ==========================================================================
+   MOBILE FIRST (Default View)
+   ========================================================================== */
+.logo-container {
+  display: flex;
+  
+  /* Stacks the logos vertically on mobile screens */
+  flex-direction: column; 
+  
+  /* Centers them perfectly in the middle of the screen */
+  align-items: center; 
+  justify-content: center;
+  
+  /* Adds a healthy 20px space between the top and bottom logo */
+  gap: 20px; 
+  
+  width: 100%;
+}
+
+/* Make the logos comfortably large on mobile devices */
+.partner-logo {
+  margin-left:10px;
+
+  /* 1. Forces the logo to take up 25% of the total mobile screen width */
+  width: 25vw;         
+  
+  /* 2. Sets a safety limit so it never gets insanely giant on big phones */
+  max-width: 100px;    
+  
+  /* 3. Sets a safety floor so it never gets too tiny on old phones */
+  min-width: 100px;    
+  
+  height: auto;        
+  object-fit: contain; 
+}
+
+/* ==========================================================================
+   DESKTOP / PC OVERRIDE (Screens wider than 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .logo-container {
+    /* Switches the logos to sit perfectly side-by-side on PC */
+    flex-direction: row; 
+    
+    /* Optional: Keeps them horizontally centered on desktop */
+    justify-content: center; 
+    align-items: center;
+    
+    /* Adjust the gap between them horizontally if needed */
+    gap: 32px; 
+  }
+}
+
+
+.hidden {
+    display: none;
+}
+
+button {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 24px;
+    margin: 5px;
+    border-radius: 999px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: #60a5fa;
+    color: #60a5fa;
+}
+
+/*----------- BUTTONS SCROLLING ------------*/
+/* ==========================================================================
+   MOBILE FIRST: Horizontal Swipe View (Default)
+   ========================================================================== */
+
+.about-nav-container b {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;          /* Strictly forbids buttons from wrapping to a new line */
+  overflow-x: auto;           /* Adds the horizontal touch-swipe functionality */
+  gap: 12px;                  /* Clean spacing between the pills */
+  width: 100%;
+  padding-bottom: 12px;       /* Gives breathing room below the menu */
+  
+  /* Smooth scrolling mechanics for iOS/Android touch engines */
+  -webkit-overflow-scrolling: touch; 
+  scroll-snap-type: x mandatory; /* Makes sliding snap nicely into place */
+}
+
+/* Hide the native, clunky browser scrollbar to maintain a sleek pill look */
+.about-nav-container b::-webkit-scrollbar {
+  display: none; 
+}
+.about-nav-container b {
+  scrollbar-width: none;      /* Hides scrollbar on Firefox */
+  -ms-overflow-style: none;  /* Hides scrollbar on old IE/Edge */
+}
+
+/* Ensure the buttons behave inside the swiping track */
+.about-nav-container button {
+  white-space: nowrap;        /* Prevents text like "Soft Skills" from breaking into two rows */
+  flex-shrink: 0;             /* Blocks the browser from squishing the buttons tiny */
+  scroll-snap-align: start;   /* Alignment target for the swipe snapping */
+  
+  /* Optional: Ensure a generous tap area for thumbs on mobile */
+  padding: 10px 18px;
+}
+
+/* Clear the old hardcoded line breaks on mobile so they don't add dead layout space */
+.about-nav-container br {
+  display: none;
+}
+
+/* ==========================================================================
+   DESKTOP / PC OVERRIDE (Screens wider than 768px)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .about-nav-container b {
+    justify-content: center;  /* Centers the full row beautifully on wide PC screens */
+    overflow-x: visible;      /* Deactivates mobile swipe container constraints */
+    padding-bottom: 0;        /* Resets bottom padding back to normal */
+  }
+
+  /* Bring the breaks back to life on desktop if you want your original spacing spacing */
+  .about-nav-container br {
+    display: inline;
+  }
+}

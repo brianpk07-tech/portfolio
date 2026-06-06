@@ -1,0 +1,83 @@
+
+/* ------ IMAGE GLOW CONTAINER --------- */
+
+.image-glow-container {
+  display: inline-block; /* Fits tightly around your image content */
+  position: relative;
+  width: 100%;
+  
+  /* The Magic Backdrop Gradient: 
+     Starts as light violet in the center (0%), 
+     fades out smoothly, and becomes completely transparent at the outer edges (70%) */
+  background: radial-gradient(
+    circle at center, 
+    rgba(216, 180, 254, 0.4) 0%,   /* Your light violet shade with 40% opacity */
+    rgba(124, 58, 237, 0.1) 60%,  /* Transitions to darker violet at 10% opacity */
+    rgba(0, 0, 0, 0) 80%          /* Completely fades to transparent */
+  );
+  
+  /* Optional: Adds extra softness to the glow edges */
+  border-radius: 50%; 
+}
+
+/* Ensure the image sits cleanly on top of the gradient */
+.image-glow-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2; /* Keeps image content above the background layer */
+}
+
+/* ------ VIOLET GRADIENTS --------- */
+
+
+.text-gradient-violet-2 {
+  background: linear-gradient(to right, #a685ff, #c07eff);
+  
+  /* Magical properties that clip the background to the text shapes */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback */
+  
+  /* Ensures the gradient stays sharp on high-res displays */
+  display: inline-block; 
+}
+
+.text-gradient-violet-3 {
+  /* Darker on the edges, lighter in the middle */
+  background: linear-gradient(to right, #7c3aed, #d8b4fe, #7c3aed);
+  
+  /* Clips the gradient background to the shape of your text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for older browsers */
+  
+  display: inline-block;
+}
+
+
+.copyright {
+    color: #999999;
+    font-size: 0.9rem;
+}
+
+.footer-divider {
+  /* Resets default browser styling */
+  border: 0;
+  
+  /* Sets the height and color of the line */
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  
+  /* Balances the vertical space evenly between links and copyright */
+  margin: 32px 0; 
+  
+  /* Optional: If you don't want the line to go edge-to-edge, uncomment below */
+  /* max-width: 1200px; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+}
+

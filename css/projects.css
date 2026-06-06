@@ -1,0 +1,230 @@
+/* Base Project Section */
+.project-section {
+  padding: 40px 20px;
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+}
+
+.project-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column; /* Mobile: Text is always first, then image */
+  gap: 40px;
+}
+
+/* Typography styles */
+.project-small-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.project-content .project-title {
+  font-family: var(--font-title);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+/* Semi-transparent rounded background card */
+.project-card {
+  background: rgba(255, 255, 255, 0.05); /* Soft white transparency */
+  backdrop-filter: blur(12px);          /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 28px;
+  border-radius: 16px;                  /* Rounded corners */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-card p {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Base Gallery Structure */
+/* Update your existing gallery classes with these rules */
+
+.project-gallery {
+  position: relative;
+  width: 100%;
+}
+
+.gallery-wrapper {
+  position: relative;
+  width: 100%;
+  
+  /* Forces the container into a perfect 4:3 box regardless of screen size */
+  aspect-ratio: 4 / 3; 
+  
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-wrapper img {
+  /* Forces the image to perfectly fill the 4:3 container bounds */
+  width: 100%;
+  height: 100%; 
+  
+  /* The Magic Trick: Adapts to the container height, preserves original proportions, 
+     and automatically crops off the excess left/right sides */
+  object-fit: cover; 
+  
+  /* Centers the crop focal point so the middle of your image is always visible */
+  object-position: center; 
+  
+  display: none; 
+
+/* Smooth Fade Controls */
+  display: block;              /* Change display from none to block */
+  position: absolute;          /* Stack them cleanly on top of each other */
+  top: 0;
+  left: 0;
+  opacity: 0;                  /* Hide them by default via transparency */
+  transition: opacity 0.4s ease-in-out; /* The fade animation speed */
+  pointer-events: none;        /* Prevents hidden images from intercepting clicks */
+
+}
+
+.gallery-wrapper img.active {
+  opacity: 1;                  /* Smoothly fades in the active image */
+  pointer-events: auto;        /* Allows interaction if needed */
+  display: block; 
+}
+
+/* Simple Navigation Dots Below Image */
+.gallery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gallery-nav .dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.gallery-nav .dot.active, 
+.gallery-nav .dot:hover {
+  background-color: var(--text-primary);
+}
+
+
+/* ==========================================================================
+   DESKTOP VIEW REBALANCING (PC)
+   ========================================================================== */
+@media (min-width: 992px) {
+  .project-container {
+    flex-direction: row; /* Default layout: Text Left, Image Right */
+    align-items: center;
+    gap: 64px;
+  }
+
+  .project-content, 
+  .project-gallery {
+    flex: 1; /* Crisp 50/50 balance */
+    width: 50%;
+  }
+
+  /* The Magic Swap Class */
+  .project-container.project-reverse {
+    flex-direction: row-reverse; /* Flips placement: Image Left, Text Right */
+  }
+
+  .project-title {
+    font-size: 3rem;
+  }
+}
+
+/* ------ IMAGE NAVIGATION FRAME --------- */
+
+/* Centers the control element underneath the image */
+.gallery-nav {
+	position: absolute;   /* Detaches from the normal document flow */
+	  bottom: 10px;         /* Floats exactly 10px above the bottom edge of the image container */
+	  left: 50%;            /* Starts at the horizontal midpoint */
+	  transform: translateX(-50%); /* Shifts left by 50% of its own width to achieve perfect centering */
+	  
+	  margin-top: 0;        /* Removes the old top margin since it's floating now */
+	  z-index: 5;           /* Ensures it always stays safely layered on top of the image elements */
+	  user-select: none;
+}
+
+/* The Single Unified Navigation Frame Component */
+.nav-frame {
+display: inline-flex;
+  align-items: center;
+  gap: 12px; /* Slightly increased gap to give the arrows breathing room */
+  
+  background: rgba(15, 23, 42, 0.65); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  
+  border-radius: 30px; 
+  padding: 6px 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.nav-btn {
+  /* This completely wipes out default browser background colors and buttons styles */
+  background: none !important;  
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  /* Reset layout geometry so there's absolutely no box footprint */
+  padding: 0; 
+  margin: 0;
+  border-radius: 0; 
+  appearance: none; /* Disables platform-native rendering shapes */
+  -webkit-appearance: none; /* Fix for Safari/iOS devices */
+  
+  /* Text and Icon styling */
+  color: rgba(255, 255, 255, 0.6); 
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Ensure hover remains perfectly transparent */
+.nav-btn:hover {
+  color: #ffffff;             
+  background: none !important; 
+  background-color: transparent !important;
+  transform: scale(1.15);     
+}
+
+/* Active State: Slight click reaction */
+.nav-btn:active {
+  transform: scale(0.95);
+}
+
+/* Counter Style inside the frame */
+.nav-counter {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.5px;
+  min-width: 48px;
+  text-align: center;
+}

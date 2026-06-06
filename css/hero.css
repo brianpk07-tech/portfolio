@@ -1,0 +1,111 @@
+
+/* --------------------------- BASE HERO LAYOUT (Mobile First) ------------------- */
+.hero-section {
+  color: var(--text-primary);
+  padding: 60px 20px;
+  /*min-height: 100vh;*/
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Mobile: Stacks vertically */
+  gap: 32px;
+}
+
+/* Mobile Image Setup */
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Adjust or remove if your old image wasn't rounded */
+  object-fit: cover;
+}
+
+/* Mobile Typography & Button */
+.hero-content {
+  text-align: left; /* Mobile: Centered text */
+}
+
+.hero-content h1 {
+  font-family: var(--font-title);
+  font-size: 2.5rem; /* Your mobile title size */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-family: var(--font-body);
+  font-size: 1.1rem; /* Your mobile subtitle size */
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* 3. DESKTOP LAYOUT SHIFT (PC) */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row; /* PC: Image on Right, Text on Left */
+    align-items: center;
+    gap: 64px;
+  }
+
+  .hero-image, 
+  .hero-content {
+    flex: 1; /* Split screen 50/50 */
+  }
+
+  .hero-content {
+    text-align: left; /* PC: Align text to the left next to the image */
+  }
+
+  .hero-content h1 {
+    font-size: 4rem; /* Your original PC title size */
+  }
+
+  .hero-content p {
+    font-size: 1.25rem; /* Your original PC subtitle size */
+  }
+}
+
+
+/* Hero / Header Section */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally in the flex column */
+    gap: 15px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover;
+    border: 3px solid #0076ff;
+}
+
+.highlight {
+    color: #0076ff;
+}
+
