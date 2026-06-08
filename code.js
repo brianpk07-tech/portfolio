@@ -1,13 +1,23 @@
 //-------------------------------
 function toggleDiv(id) {
 //-------------------------------
+    // hide all sections
     document.getElementById("acc").style.display = "none";
     document.getElementById("lan").style.display = "none";
     document.getElementById("sof").style.display = "none";
     document.getElementById("com").style.display = "none";
+//    document.getElementById("int").style.display = "none";
     document.getElementById("cnt").style.display = "none";
 
+    // Show selected section
     document.getElementById(id).style.display = "block";
+
+    // Remove active class from all buttons
+    document.querySelectorAll(".about-nav-container button")
+        .forEach(button => button.classList.remove("active"));
+
+    // Add active class to clicked button
+    btn.classList.add("active");
 }
 
 
@@ -112,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (totalImages <= 1) return;
 
-	// Injects everything as raw text tags—eliminating browser button engine bugs
+	// Injects everything as raw text tagsâ€”eliminating browser button engine bugs
 	controlsContainer.innerHTML = `
 	  <div class="nav-frame">
 	    <span class="nav-btn prev-btn" role="button" aria-label="Previous image">&lt;</span>
