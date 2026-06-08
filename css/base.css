@@ -53,6 +53,17 @@ footer {
     margin-bottom: 40px;
 }
 
+.container p {
+	  color: var(--text-primary);
+	  font-family: var(--font-body);
+	  font-size: 1.25rem;
+	  color: rgba(255, 255, 255, 0.85);
+	  line-height: 1.4;
+	
+	  margin-top: 0;
+	  margin-bottom: 14px;
+}
+
 /* ==========================================================================
    3. Component Styling
    ========================================================================== */
@@ -70,4 +81,17 @@ footer {
     color: #0076ff;
     text-decoration: none;
     font-weight: bold;
+}
+
+.footer p {
+	  text-align: center; /* Centers the navigation links horizontally */
+
+	  color: var(--text-primary);
+	  font-family: var(--font-body);
+	  font-size: 1.25rem;
+	  color: rgba(255, 255, 255, 0.85);
+	  line-height: 1.4;
+	
+	  margin-top: 0;
+	  margin-bottom: 14px;
 }
