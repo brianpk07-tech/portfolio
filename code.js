@@ -1,5 +1,5 @@
 //-------------------------------
-function toggleDiv(id) {
+function toggleDiv(id,btn) {
 //-------------------------------
     // hide all sections
     document.getElementById("acc").style.display = "none";
