@@ -131,6 +131,18 @@
   background-color: var(--text-primary);
 }
 
+.image-title {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    top: 2%;
+    right: 2%;
+    transform: translate(-2%, -2%);
+
+    color: white;
+    font-size: .8rem;
+    font-weight: light;
+}
 
 /* ==========================================================================
    DESKTOP VIEW REBALANCING (PC)
