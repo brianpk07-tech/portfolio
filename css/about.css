@@ -1,6 +1,15 @@
+
+
+.hidden {
+    display: none;
+}
+
 /* ==========================================================================
-   MOBILE FIRST (Default View)
+	LOGOS   
    ========================================================================== */
+
+/*---- MOBILE (Default View) ---- */
+
 .logo-container {
   display: flex;
   
@@ -34,9 +43,7 @@
   object-fit: contain; 
 }
 
-/* ==========================================================================
-   DESKTOP / PC OVERRIDE (Screens wider than 768px)
-   ========================================================================== */
+/*---- DESKTOP / PC OVERRIDE (Screens wider than 768px) ---- */
 @media (min-width: 768px) {
   .logo-container {
     /* Switches the logos to sit perfectly side-by-side on PC */
@@ -51,10 +58,9 @@
   }
 }
 
-
-.hidden {
-    display: none;
-}
+/* ==========================================================================
+  			 BUTTONS
+   ========================================================================== */
 
 button {
     background: rgba(255,255,255,0.1);
@@ -70,14 +76,18 @@ button {
 
 button:hover {
     background: rgba(255,255,255,0.2);
+    border-color: #a0d5ff;
+    color: #a0d5ff;
+}
+
+button.active {
+    background: rgba(255,255,255,0.2);
     border-color: #60a5fa;
     color: #60a5fa;
 }
 
 /*----------- BUTTONS SCROLLING ------------*/
-/* ==========================================================================
-   MOBILE FIRST: Horizontal Swipe View (Default)
-   ========================================================================== */
+/* MOBILE FIRST: Horizontal Swipe View (Default) */
 
 .about-nav-container b {
   display: flex;
@@ -117,9 +127,7 @@ button:hover {
   display: none;
 }
 
-/* ==========================================================================
-   DESKTOP / PC OVERRIDE (Screens wider than 768px)
-   ========================================================================== */
+/* DESKTOP / PC OVERRIDE (Screens wider than 768px) */
 @media (min-width: 768px) {
   .about-nav-container b {
     justify-content: center;  /* Centers the full row beautifully on wide PC screens */
@@ -131,4 +139,44 @@ button:hover {
   .about-nav-container br {
     display: inline;
   }
+}
+
+/* ==========================================================================
+  			 LANGUAGE PROGRESS BARS
+   ========================================================================== */
+.language {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.language span {
+    width: 100px; /* same width for every label */
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 10px;
+    background-color: #b3b3b3; /* Gray 100% bar */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(to right, #c07eff, #7c3aed); /* Blue filled portion #1e90ff*/
+    border-radius: 5px;
+
+}
+
+/*----------- hide progress bars in small devices ------------*/
+@media (max-width: 500px) {		
+	.progress-bar {
+		display: none;
+	}
+	.progress-fill {
+		display: none;
+	}
 }
