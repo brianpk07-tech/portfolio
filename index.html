@@ -23,10 +23,8 @@
 		</div>
 	
 		<div class="hero-content">
-	
 	            <h1>Brian <span class="text-gradient-violet-3">Parkansky</span></h1>
 	            <h2 class="text-2xl tracking-tight lg:text-4xl font-semibold text-white leading-tight">Etudiant en Ingénierie Data Sciences & Management </h2>
-
 		</div>
         </div>
     </header>
@@ -39,9 +37,10 @@
 		<div class="about-nav-container">
 			<b>
 			<button onclick="toggleDiv('acc',this)" class="active">Accueil</button>
-			<button onclick="toggleDiv('lan',this)">Langues</button>
-			<button onclick="toggleDiv('sof',this)">Soft Skills</button>
 			<button onclick="toggleDiv('com',this)">Compétences</button>
+			<button onclick="toggleDiv('lan',this)">Langues</button>
+			<button onclick="toggleDiv('int',this)">Intérêts</button>
+			<button onclick="toggleDiv('sof',this)">Soft Skills</button>
 			<button onclick="toggleDiv('cnt',this)">Contact</button>
 			</b><br /><br />
 		</div>
@@ -70,7 +69,7 @@
 
 		
 		<div id="lan" class="hidden">
-		<p class="text-lg text-white/80 max-w-4xl mt-15 mx-auto lg:mx-0 pt-20">
+		          <p class="text-lg text-white/80 max-w-4xl mt-15 mx-auto lg:mx-0 pt-20">
 
 			<div class="language">
 				<span>Français :</span> 
@@ -103,7 +102,7 @@
 				</div>
 				Certification B1
 			</div>
-			
+
 		</p>
 		</div>
 		
@@ -115,7 +114,7 @@
 		          <p class="text-lg text-white/80 max-w-4xl mt-15 mx-auto lg:mx-0 pt-20">
 		
 		
-		    <b>Intelligence émotionnelle :</b> Je suis quelqu'un d'empathique et toujours optimiste <br />
+		    <b>Intelligence émotionnelle :</b> Je suis quelqu'un d'empathique, toujours optimiste et avec une bonne tolérance au stress<br />
 		    <b>Intelligence relationnelle :</b> J'ai l'esprit d'équipe et j'aime fédérer dans un climat positif<br />
 		    <b>Curiosité :</b> J'aime toujours en apprendre plus sur tous les sujets <br />
 		    <b>Capacité de résolution :</b> J'aime comprendre les mécanismes pour trouver la solution à un besoin, que ce soit seul ou en équipe <br />
@@ -136,6 +135,20 @@
 		▪   Maitrise Pack Office <br />
 		▪   Etudes de marché, analyse de la demande <br />
 		▪   Gestion de projets <br />
+		</p>
+		</div>
+
+	<!---------------------------------- INTERETS ----------------------------------->
+
+
+		<div id="int" class="hidden">
+		          <p class="text-lg text-white/80 max-w-4xl mt-15 mx-auto lg:mx-0 pt-20">
+		<b>Sports </b>: krav maga, boxe, athlétisme, qui m'ont apporté discipline, perséverance et respect d'autrui. <br />
+		<b>Délégué de classe en Collège, Lycée & Bachelor / Ambassadeur EPF auprès des futurs élèves</b> : 
+		ces expériences m'ont donné un vrai sens du service et une bonne aisance relationnelle. 
+		Par ailleurs, l’organisation de forums, salons et soirées étudiantes m'ont appris les enjeux de la réactivité, la polyvalence et la satisfaction des interlocuteurs.<br />
+		<b>Voyages réguliers en Argentine </b>: où je pratique intensivement l'espagnol. <br />
+
 		</p>
 		</div>
 		
@@ -190,19 +203,19 @@
 	    <!-- 2. Interactive Image Slider (Below text on mobile, Right on PC) -->
 	    <div class="project-gallery">
 	      <div class="gallery-wrapper">
-	        <img src="prj/3D_01.png" title="Los Angeles" class="active">
-	        <img src="prj/3D_02.png" title="Los Angeles">
-	        <img src="prj/3D_02b.png" title="Los Angeles">
-	        <img src="prj/3D_03.png" title="Los Angeles">
-	        <img src="prj/3D_03b.png" title="Los Angeles">
+	        <img src="prj/3D_01.png" title="Los Angeles (Modèle 3D)" class="active">
+	        <img src="prj/3D_02.png" title="Los Angeles (mode édition)">
+	        <img src="prj/3D_02b.png" title="Los Angeles (Modèle 3D)">
+	        <img src="prj/3D_03.png" title="Los Angeles (mode édition)">
+	        <img src="prj/3D_03b.png" title="Los Angeles (Modèle 3D)">
 	        <img src="prj/3D_04.png" title="Detroit (vue Google Street View)">
 	        <img src="prj/3D_04b.png" title="Detroit (Modèle 3D)">
 	        <img src="prj/3D_05.png" title="Detroit (vue Google Street View)">
 	        <img src="prj/3D_05b.png" title="Detroit (Modèle 3D)">
 	      </div>
 	      <!-- Simple navigation dots -->
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -227,8 +240,8 @@
 	      <div class="gallery-wrapper">
 	        <img src="prj/wordpress_01.png" alt="Stage Croatie" class="active">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -245,17 +258,17 @@
 		<table cellpadding="15">
 		<tr>
 		<td style="padding:15px;"> 
-		<img src="img/Apple_gray_logo.png" width="40"></td>
+		<img src="img/Apple_gray_logo.png" width="35"></td>
 		<td> <img src="img/Michelin-Logo.jpg" width="70"></td></tr></table>
 		</h2>
 	      <div class="project-card">
 	        <p>
-			Dans le cadre de mon Bachelor, j'ai réalisé des études de marché poussées en utilisant différents types d';outils d&#x27;analyse tels que :<br /><b>
+			Dans le cadre de mon Bachelor, j'ai réalisé des études de marché poussées en utilisant différents types d'outils d'analyse tels que :<br /><b>
 			▪ Swot<br />
 			▪ Pestel<br />
-			▪ Matrice d&#x27;Eisenhower<br />
+			▪ Matrice d'Eisenhower<br />
 			▪ 4P</b><br />
-			J&#x27;ai étudié le cas d'<b>Apple</b> ainsi que celui de <b>Michelin</b>.
+			J'ai étudié le cas d'<b>Apple</b> ainsi que celui de <b>Michelin</b>.
 		</p>
 	      </div>
 	    </div>
@@ -273,8 +286,8 @@
 	        <img src="prj/em-9.webp">
 	        <img src="prj/em-10.webp">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -305,8 +318,8 @@
 	        <img src="prj/msg-4.webp">
 	        <img src="prj/msg-5.webp">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -346,8 +359,8 @@
 	        <img src="prj/orpi-12.webp">
 	        <img src="prj/orpi-13.webp">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -372,8 +385,8 @@
 	      <div class="gallery-wrapper">
 	        <img src="prj/pizza-1.jpg" class="active">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -401,6 +414,7 @@
 	      </div>
 	      <div class="gallery-nav">
 	      </div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -426,8 +440,8 @@
 	        <img src="prj/robot-1.png" alt="projet robot" class="active">
 	        <img src="prj/robot-2.png" alt="projet robot">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
@@ -455,8 +469,8 @@
 	        <img src="prj/auto-2.webp">
 	        <img src="prj/auto-3.webp">
 	      </div>
-	      <div class="gallery-nav">
-	      </div>
+	      <div class="gallery-nav"></div>
+	      <div class="image-title"></div>
 	    </div>
 	
 	  </div>
