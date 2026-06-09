@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,21 @@
 </head>
 <body>
 
-<!-- ************************************************* HEADER ******************************************** -->
+<div id="lang-switcher" class="lang-switcher">
+  <button data-lang="fr" class="active">
+    <img src="https://flagcdn.com/w20/fr.png" class="flag" alt="FR">
+  </button>
 
+  <button data-lang="en">
+    <img src="https://flagcdn.com/w20/gb.png" class="flag" alt="EN">
+  </button>
+
+  <button data-lang="es">
+    <img src="https://flagcdn.com/w20/es.png" class="flag" alt="ES">
+  </button>
+</div>
+
+<!-- ************************************************* HEADER ******************************************** -->
     <header class="hero-section">
 	<div class="hero-container">            
 		<div class="hero-image image-glow-container">
@@ -544,5 +557,25 @@
         <p class="copyright">&copy; 2026 Brian Parkansky. All rights reserved.</p>
 	<br />
 </center>
+
+
+<!--------------------- GOOGLE TRANSLATE WIDGET --------------------->
+<div id="google_translate_element" class="hidden"></div>
+
+<script>
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {
+            pageLanguage: 'fr',
+            includedLanguages: 'en,fr,es',
+            autoDisplay: false
+        },
+        'google_translate_element'
+    );
+}
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>

@@ -20,7 +20,9 @@ function toggleDiv(id, btn) {
     btn.classList.add("active");
 }
 
+//-------------------------------
 document.addEventListener("DOMContentLoaded", () => {
+//-------------------------------
   const galleries = document.querySelectorAll('.project-gallery');
 
   galleries.forEach(gallery => {
@@ -67,3 +69,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+//-------------------------------
+function setLanguage(lang) {
+//-------------------------------
+    const select = document.querySelector('.goog-te-combo');
+
+    if (!select) return;
+
+    select.value = lang;
+
+    select.dispatchEvent(new Event('change', {
+        bubbles: true
+    }));
+}
+
+//-------------------------------
+function setupLanguageSwitcher() {
+//-------------------------------
+    const buttons = document.querySelectorAll("#lang-switcher button");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const lang = btn.dataset.lang;
+
+            // switch Google language
+            setLanguage(lang);
+
+            // update UI state
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+        });
+    });
+}
+
+setTimeout(setupLanguageSwitcher, 1200);
